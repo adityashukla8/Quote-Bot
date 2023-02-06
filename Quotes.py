@@ -1,6 +1,6 @@
 import pandas as pd
 import random
-import firebase_admin
+import firebase_admin as admin
 from firebase_admin import credentials
 from firebase_admin import db
 import streamlit as st
