@@ -7,7 +7,10 @@ import streamlit as st
 import dotenv
 import os
 
-cred = credentials.Certificate("D:\Aditya\data\Quotes\quotes-904b2-firebase-adminsdk-vrxkf-36da48f48b.json")
+dotenv.load_dotenv()
+
+cred = os.environ.get("creds")
+# cred = credentials.Certificate("D:\Aditya\data\Quotes\quotes-904b2-firebase-adminsdk-vrxkf-36da48f48b.json")
 admin.initialize_app(cred)
 ref = db.reference('', url='https://quotes-904b2-default-rtdb.firebaseio.com/')
 
