@@ -14,4 +14,8 @@ cred = os.environ.get("creds")
 admin.initialize_app(cred)
 ref = db.reference('', url='https://quotes-904b2-default-rtdb.firebaseio.com/')
 
+ref = db.reference('', url='https://quotes-904b2-default-rtdb.firebaseio.com/')
+data = ref.get()
+df = pd.DataFrame(data)
+
 st.write("quotes")
