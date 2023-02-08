@@ -10,7 +10,7 @@ import os
 dotenv.load_dotenv()
 
 cred = os.environ.get("cred")
-admin.initialize_app(cred)
+admin.initialize_app(cred, name  = '123')
 ref = db.reference('', url='https://quotes-904b2-default-rtdb.firebaseio.com/')
 
 data = ref.get()
