@@ -8,7 +8,9 @@ import streamlit as st
 import dotenv
 import os
 
-dotenv.load_dotenv()
+# dotenv.load_dotenv()
+
+db = firestore.Client.from_service_account_json('quotes-904b2-firebase-adminsdk-vrxkf-36da48f48b.json')
 
 # cred = credentials.Certificate('quotes-904b2-firebase-adminsdk-vrxkf-36da48f48b.json')
 # admin.initialize_app(cred, name = "abcdefadsd")
