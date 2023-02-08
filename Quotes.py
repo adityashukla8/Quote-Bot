@@ -11,7 +11,7 @@ import os
 # dotenv.load_dotenv()
 
 db = firestore.Client.from_service_account_json('quotes-904b2-firebase-adminsdk-vrxkf-36da48f48b.json')
-doc_ref = db.collection("posts").document("Google")
+doc_ref = db.reference('', url='https://quotes-904b2-default-rtdb.firebaseio.com/')
 data = doc_ref.get()
 
 # cred = credentials.Certificate('quotes-904b2-firebase-adminsdk-vrxkf-36da48f48b.json')
