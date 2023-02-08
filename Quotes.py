@@ -34,11 +34,13 @@ def get_record(author):
     records = data['records']
     return random.choice(records)
 
+def select_author():
+    return random.choice(authors)
+
 def main():
     st.title("Author Random Record Generator")
 
-    current_author = random.choice(authors)
-#     st.text_input("Enter author name:", value=authors[0])
+    current_author = select_author()
     st.write("Current author:", current_author)
 
     record = get_record(current_author)
@@ -49,7 +51,7 @@ def main():
         st.write("Record:", record, overwrite=True)
 
     if st.button("Change Author"):
-        current_author = random.choice(authors)
+        current_author = select_author()
         st.write("Current author:", current_author)
         record = get_record(current_author)
         st.write("Record:", record, overwrite=True)
