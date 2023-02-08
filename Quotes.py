@@ -50,7 +50,7 @@ def main():
 #     st.write("Record:", record)
 
     if st.button("Generate More"):
-        record = generate_more(current_author)
+        record = get_record(current_author)
         st.write("Current author:", current_author)
         st.write("Record:", record, overwrite=True)
 
