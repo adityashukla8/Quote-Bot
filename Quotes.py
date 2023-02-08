@@ -46,7 +46,7 @@ def main():
 #     st.write("Current author:", current_author)
 
     record = get_record(current_author)
-    st.write("Record:", record)
+#     st.write("Record:", record)
 
     if st.button("Generate More"):
         record = get_record(current_author)
