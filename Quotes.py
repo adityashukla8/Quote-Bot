@@ -7,6 +7,8 @@ from google.cloud import firestore
 import streamlit as st
 import dotenv
 import os
+import requests
+import json
 
 import airtable
 
