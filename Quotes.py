@@ -37,7 +37,8 @@ def get_record(author):
 def main():
     st.title("Author Random Record Generator")
 
-    current_author = st.text_input("Enter author name:", value=authors[0])
+    current_author = random.choice(authors)
+#     st.text_input("Enter author name:", value=authors[0])
     st.write("Current author:", current_author)
 
     record = get_record(current_author)
