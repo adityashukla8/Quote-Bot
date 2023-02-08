@@ -9,7 +9,7 @@ import os
 
 dotenv.load_dotenv()
 
-cred = os.environ.get("cred")
+cred = credentials.Certificate('./quotes-904b2-firebase-adminsdk-vrxkf-36da48f48b.json')
 admin.initialize_app(cred, name  = '123')
 ref = db.reference('', url='https://quotes-904b2-default-rtdb.firebaseio.com/')
 
