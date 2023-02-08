@@ -4,3 +4,4 @@ pandas
 firebase_admin
 firebase
 python-dotenv
+airtable
