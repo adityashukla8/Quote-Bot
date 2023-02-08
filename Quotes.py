@@ -14,7 +14,7 @@ dotenv.load_dotenv()
 # admin.initialize_app(cred, name = "abcdefadsd")
 # ref = db.reference('', url='https://quotes-904b2-default-rtdb.firebaseio.com/')
 
-data = ref.get()
+# data = ref.get()
 # df = pd.DataFrame(data)
 
 st.write("quotes")
