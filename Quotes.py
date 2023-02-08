@@ -58,9 +58,10 @@ def main():
 
     if st.button("Change Author"):
         current_author = change_author()
-        st.write("Current author:", current_author)
-        record = generate_more(current_author)
-        st.write("Record:", record)
+        generate_more(current_author)
+#         st.write("Current author:", current_author)
+#         record = generate_more(current_author)
+#         st.write("Record:", record)
 
 if __name__ == "__main__":
     main()
