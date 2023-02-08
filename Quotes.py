@@ -45,13 +45,13 @@ def main():
 
     if st.button("Generate More"):
         record = get_record(current_author)
-        st.write("Record:", record)
+        st.write("Record:", record, overwrite=True)
 
     if st.button("Change Author"):
         current_author = random.choice(authors)
         st.write("Current author:", current_author)
         record = get_record(current_author)
-        st.write("Record:", record)
+        st.write("Record:", record, overwrite=True)
 
 if __name__ == "__main__":
     main()
