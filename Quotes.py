@@ -38,7 +38,9 @@ def change_author():
     return random.choice(authors)
 
 def generate_more(current_author):
-    return get_record(current_author)
+    st.write("Current author:", current_author)
+    record = get_record(current_author)
+    st.write("Record:", record)
 
 def main():
     st.title("Author Random Record Generator")
@@ -50,9 +52,9 @@ def main():
 #     st.write("Record:", record)
 
     if st.button("Generate More"):
-        st.write("Current author:", current_author)
-        record = generate_more(current_author)
-        st.write("Record:", record)
+#         st.write("Current author:", current_author)
+        generate_more(current_author)
+#         st.write("Record:", record)
 
     if st.button("Change Author"):
         current_author = change_author()
