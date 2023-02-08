@@ -37,7 +37,7 @@ def get_record(author):
 def main():
     st.title("Author Random Record Generator")
 
-    current_author = st.sidebar.selectbox("Select an author", authors, key='unique_author_selectbox')
+    current_author = st.text_input("Enter author name:", value=authors[0])
     st.write("Current author:", current_author)
 
     record = get_record(current_author)
@@ -47,8 +47,8 @@ def main():
         record = get_record(current_author)
         st.write("Record:", record)
 
-    if st.sidebar.button("Change Author"):
-        current_author = st.sidebar.selectbox("Select an author", authors, key='unique_author_selectbox')
+    if st.button("Change Author"):
+        current_author = random.choice(authors)
         st.write("Current author:", current_author)
         record = get_record(current_author)
         st.write("Record:", record)
