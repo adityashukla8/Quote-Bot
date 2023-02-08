@@ -32,7 +32,7 @@ def get_record(author):
     response = requests.get(url)
     data = response.json()
     records = data['records']
-    return random.choice(records)
+    return random.choice(records['fields']['quote'])
 
 def change_author():
     return random.choice(authors)
