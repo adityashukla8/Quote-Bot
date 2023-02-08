@@ -26,7 +26,6 @@ import requests
 import streamlit as st
 
 authors = ['Richard P. Feynman', 'Leo Tolstoy']
-current_author = random.choice(authors)
 
 def get_record(author):
     url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + author + "'"
@@ -46,7 +45,7 @@ def generate_more(current_author):
 def main():
     st.title("Author Random Record Generator")
 
-#     current_author = change_author()
+    current_author = change_author()
 #     st.write("Current author:", current_author)
 
 #     record = generate_more(current_author)
