@@ -21,6 +21,10 @@ view = 'Grid view'
 
 # res = requests.get(url)
 
+import random
+import requests
+import streamlit as st
+
 authors = ['Richard P. Feynman', 'Leo Tolstoy']
 
 def get_record(author):
@@ -33,7 +37,7 @@ def get_record(author):
 def main():
     st.title("Author Random Record Generator")
 
-    current_author = st.sidebar.selectbox("Select an author", authors)
+    current_author = st.sidebar.selectbox("Select an author", authors, key='unique_author_selectbox')
     st.write("Current author:", current_author)
 
     record = get_record(current_author)
@@ -44,7 +48,7 @@ def main():
         st.write("Record:", record)
 
     if st.sidebar.button("Change Author"):
-        current_author = st.sidebar.selectbox("Select an author", authors)
+        current_author = st.sidebar.selectbox("Select an author", authors, key='unique_author_selectbox')
         st.write("Current author:", current_author)
         record = get_record(current_author)
         st.write("Record:", record)
