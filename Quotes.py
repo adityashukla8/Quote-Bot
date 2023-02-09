@@ -37,11 +37,12 @@ def get_record(author):
     return quote['fields']['quote']
 
 def change_author():
-    return random.choice(authors)
+    global current_auth
+    current_auth  = random.choice(authors)
 
-def generate_more(current_author):
-    st.write("Current author:", current_author)
-    record = get_record(current_author)
+def generate_more(current_auth):
+    st.write("Current author:", current_auth)
+    record = get_record(current_aut)
     st.write("Record:", record)
 
 def main():
