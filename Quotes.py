@@ -26,6 +26,7 @@ import requests
 import streamlit as st
 
 authors = ['Richard P. Feynman', 'Leo Tolstoy']
+current_auth = None
 
 def get_record(author):
     url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + author + "'"
