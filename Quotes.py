@@ -28,13 +28,13 @@ import streamlit as st
 authors = ['Richard P. Feynman', 'Leo Tolstoy']
 current_auth = None
 
-def get_record(author):
-    url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + author + "'"
-    response = requests.get(url)
-    data = response.json()
-    records = data['records']
-    quote = random.choice(records)
-    return quote['fields']['quote']
+# def get_record(author):
+#     url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + author + "'"
+#     response = requests.get(url)
+#     data = response.json()
+#     records = data['records']
+#     quote = random.choice(records)
+#     return quote['fields']['quote']
 
 def change_author():
     global current_auth
@@ -42,7 +42,15 @@ def change_author():
 
 def generate_more(current_auth):
     st.write("Current author:", current_auth)
-    record = get_record(current_auth)
+    
+    url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + author + "'"
+    response = requests.get(url)
+    data = response.json()
+    records = data['records']
+    quote = random.choice(records)
+    
+    record = quote['fields']['quote']
+#     get_record(current_auth)
     st.write("Record:", record)
 
 
