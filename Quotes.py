@@ -42,7 +42,7 @@ def change_author():
 
 def generate_more(current_auth):
     st.write("Current author:", current_auth)
-    record = get_record(current_aut)
+    record = get_record(current_auth)
     st.write("Record:", record)
 
 def main():
