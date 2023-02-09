@@ -45,15 +45,15 @@ def generate_more(current_auth):
     record = get_record(current_auth)
     st.write("Record:", record)
 
-current_author = change_author()
 
 def main():
+    current_author = change_author()
+    
     st.title("Author Random Record Generator")
-
     st.write(current_auth)
     
     if st.button("Generate More"):
-        generate_more(current_author)
+        generate_more(current_auth)
 
     if st.button("Change Author"):
         current_author = change_author()
