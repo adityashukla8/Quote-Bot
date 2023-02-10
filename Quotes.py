@@ -27,9 +27,19 @@ import streamlit as st
 
 authors = ['Richard P. Feynman', 'Leo Tolstoy']
 current_auth = None
+current_quotes = None
+
+def get_auth_quotes():
+    global current_auth
+    current_auth = random.choice(authors)
+    
+    url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + current_auth + "'"
+    return url
 
 def main():
-    st.write(authors)
+    if st.button("Generate More"):
+        get_auth_quotes()
+    
 
 # # def get_record(author):
 # #     url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + author + "'"
