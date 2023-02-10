@@ -34,7 +34,11 @@ def get_auth_quotes():
     current_auth = random.choice(authors)
     
     url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + current_auth + "'"
-    return url
+    response = requests.get(url)
+    data = response.json()
+    records = data['records']
+    current_quotes = random.choice(records)
+    return current_quotes
 
 def main():
     if st.button("Generate More"):
