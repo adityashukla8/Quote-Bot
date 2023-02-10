@@ -43,7 +43,7 @@ current_auth = None
 def generate_more(current_auth):
     st.write("Current author:", current_auth)
     
-    url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + author + "'"
+    url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + current_auth + "'"
     response = requests.get(url)
     data = response.json()
     records = data['records']
@@ -56,6 +56,7 @@ def generate_more(current_auth):
 
 def main():
 #     current_author = change_author()
+    current_auth  = random.choice(authors)
     
     st.title("Author Random Record Generator")
     st.write(current_auth)
