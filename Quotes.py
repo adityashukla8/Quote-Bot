@@ -43,7 +43,7 @@ def get_auth_quotes():
 def main():
     if st.button("Generate More"):
         get_auth_quotes()
-    
+    st.write(current_auth)
 
 # # def get_record(author):
 # #     url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + author + "'"
