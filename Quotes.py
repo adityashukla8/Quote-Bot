@@ -36,9 +36,9 @@ current_auth = None
 #     quote = random.choice(records)
 #     return quote['fields']['quote']
 
-def change_author():
-    global current_auth
-    current_auth  = random.choice(authors)
+# def change_author():
+#     global current_auth
+#     current_auth  = random.choice(authors)
 
 def generate_more(current_auth):
     st.write("Current author:", current_auth)
@@ -55,7 +55,7 @@ def generate_more(current_auth):
 
 
 def main():
-    current_author = change_author()
+#     current_author = change_author()
     
     st.title("Author Random Record Generator")
     st.write(current_auth)
