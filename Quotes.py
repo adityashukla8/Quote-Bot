@@ -28,45 +28,48 @@ import streamlit as st
 authors = ['Richard P. Feynman', 'Leo Tolstoy']
 current_auth = None
 
-# def get_record(author):
-#     url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + author + "'"
+def main():
+    st.write(authors)
+
+# # def get_record(author):
+# #     url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + author + "'"
+# #     response = requests.get(url)
+# #     data = response.json()
+# #     records = data['records']
+# #     quote = random.choice(records)
+# #     return quote['fields']['quote']
+
+# # def change_author():
+# #     global current_auth
+# #     current_auth  = random.choice(authors)
+
+# def generate_more(current_auth):
+#     st.write("Current author:", current_auth)
+    
+#     url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + current_auth + "'"
 #     response = requests.get(url)
 #     data = response.json()
 #     records = data['records']
 #     quote = random.choice(records)
-#     return quote['fields']['quote']
+    
+#     record = quote['fields']['quote']
+# #     get_record(current_auth)
+#     st.write("Record:", record)
 
-# def change_author():
-#     global current_auth
+
+# def main():
+# #     current_author = change_author()
 #     current_auth  = random.choice(authors)
-
-def generate_more(current_auth):
-    st.write("Current author:", current_auth)
     
-    url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + current_auth + "'"
-    response = requests.get(url)
-    data = response.json()
-    records = data['records']
-    quote = random.choice(records)
+#     st.title("Author Random Record Generator")
+#     st.write(current_auth)
     
-    record = quote['fields']['quote']
-#     get_record(current_auth)
-    st.write("Record:", record)
+#     if st.button("Generate More"):
+#         generate_more(current_auth)
 
-
-def main():
-#     current_author = change_author()
-    current_auth  = random.choice(authors)
-    
-    st.title("Author Random Record Generator")
-    st.write(current_auth)
-    
-    if st.button("Generate More"):
-        generate_more(current_auth)
-
-    if st.button("Change Author"):
-        current_author = change_author()
-        generate_more(current_author)
+#     if st.button("Change Author"):
+#         current_author = change_author()
+#         generate_more(current_author)
 
 if __name__ == "__main__":
     main()
