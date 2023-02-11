@@ -47,9 +47,9 @@ while True:
     
     # ask the user if they want to change the author
     change_author = input("Change author? y/n: ")
-    if change_author.lower() == 'y':
+    if st.button('Change Author'):
         current_author = random.choice(authors)
-    elif change_author.lower() == 'n':
+    elif st.button('Generate More'):
         continue
     else:
         break
