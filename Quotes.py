@@ -37,5 +37,6 @@ quote = random.choice(quotes)
 st.write(quote)
 st.write(current_author)
 
-# if st.button('Generate More'):
-#   get_quote()
+if st.button('Generate More'):
+  st.write(quote)
+  st.write(current_author)
