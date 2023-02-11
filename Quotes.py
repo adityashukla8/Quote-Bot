@@ -31,25 +31,25 @@ current_quotes = None
 
 current_author = random.choice(authors)
 
-while True:
-    # generate the URL based on the current author
-    url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + current_author + "'"
-    
-    # make the API request
-    response = requests.get(url)
-    data = response.json()
-    
-    # get a random quote from the response
-    quotes = [record['fields']['quote'] for record in data['records']]
-    quote = random.choice(quotes)
-    st.write(quote)
-    st.write(current_author)
-    
-    # ask the user if they want to change the author
-    change_author = input("Change author? y/n: ")
-    if st.button('Change Author'):
-        current_author = random.choice(authors)
-    elif st.button('Generate More'):
-        continue
-    else:
-        break
+# while True:
+# generate the URL based on the current author
+url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + current_author + "'"
+
+# make the API request
+response = requests.get(url)
+data = response.json()
+
+# get a random quote from the response
+quotes = [record['fields']['quote'] for record in data['records']]
+quote = random.choice(quotes)
+st.write(quote)
+st.write(current_author)
+
+# ask the user if they want to change the author
+change_author = input("Change author? y/n: ")
+if st.button('Change Author'):
+    current_author = random.choice(authors)
+elif st.button('Generate More'):
+    continue
+else:
+    break
