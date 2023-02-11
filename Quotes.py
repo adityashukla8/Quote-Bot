@@ -11,24 +11,24 @@ import requests
 import json
 import airtable
 import random
+import requests
 
 api_key = 'keyf0HCILmsc89SOu'
 db_key = 'appimdoShD63eN3Zc'
 table = 'Sheet1'
 view = 'Grid view'
 
-# url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + '&offset=itrMhDF4VD1pxm7W2/rec0PDQhir08dBp1L'
-
-# res = requests.get(url)
-
-import random
-import requests
-import streamlit as st
-
 authors = ['Richard P. Feynman', 'Leo Tolstoy']
 current_auth = None
 current_quotes = None
 
 current_author = random.choice(authors)
+# generate the URL based on the current author
+url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + current_author + "'"
 
-st.button('HOLA')
+# make the API request
+response = requests.get(url)
+data = response.json()
+
+st.write(data)
+st.write(current_author)
