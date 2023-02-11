@@ -49,7 +49,3 @@ st.write(current_author)
 change_author = input("Change author? y/n: ")
 if st.button('Change Author'):
     current_author = random.choice(authors)
-elif st.button('Generate More'):
-    continue
-else:
-    break
