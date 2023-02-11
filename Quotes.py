@@ -33,7 +33,7 @@ data = response.json()
 quotes = [record['fields']['quote'] for record in data['records']]
 quote = random.choice(quotes)
 
-def get_quote:
+def get_quote():
   st.write(quote)
   st.write(current_author)
 
