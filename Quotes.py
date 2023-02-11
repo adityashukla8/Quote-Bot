@@ -30,5 +30,8 @@ url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key 
 response = requests.get(url)
 data = response.json()
 
-st.write(data)
+quotes = [record['fields']['quote'] for record in data['records']]
+quote = random.choice(quotes)
+
+st.write(quote)
 st.write(current_author)
