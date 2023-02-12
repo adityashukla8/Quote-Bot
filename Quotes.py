@@ -19,6 +19,7 @@ table = 'Sheet1'
 view = 'Grid view'
 
 authors = ['Richard P. Feynman', 'Leo Tolstoy']
+global current_author 
 current_author = random.choice(authors)
 current_quotes = None
 
