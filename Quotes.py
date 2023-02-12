@@ -38,6 +38,13 @@ st.write(current_author)
 
 if st.button('Generate More'):
     global current_author, quotes, quote
+    quote = random.choice(quotes)
+    st.write(quote)
+    st.write(current_author)
+
+if st.button('Change Author'):
+    global current_author, quotes, quote
+    current_author = random.choice(authors)
     url = 'https://api.airtable.com/v0/appimdoShD63eN3Zc/Sheet1?api_key=' + api_key + "&filterByFormula=author='" + current_author + "'"
     response = requests.get(url)
     data = response.json()
