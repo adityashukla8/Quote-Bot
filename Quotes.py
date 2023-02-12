@@ -33,8 +33,8 @@ quotes = [record['fields']['quote'] for record in data['records']]
 quote = random.choice(quotes)
 
 # def get_quote():
-st.write(quote)
-st.write(current_author)
+# st.write(quote)
+# st.write(current_author)
 
 if st.button('Generate More'):
     global current_author, quotes, quote
