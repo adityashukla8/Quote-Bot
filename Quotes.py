@@ -38,6 +38,7 @@ quote = random.choice(quotes)
 # st.write(current_author)
 
 if st.button('Generate More'):
+    current_author = random.choice(authors)
     global current_author, quotes, quote
     quote = random.choice(quotes)
     st.write(quote)
